@@ -1,0 +1,12 @@
+FROM node:lts
+WORKDIR /app
+COPY package.json ./
+COPY svelte.config.js ./
+COPY tsconfig.json ./
+COPY vite.config.ts ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 4000
+CMD ["npm", "run", "preview"]
+# CMD ["npm", "run", "dev"]
