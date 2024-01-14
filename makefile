@@ -1,27 +1,13 @@
-# Makefile
+# makeで実行されるデフォルト
+default: build run
 
-# イメージ名を定義
-IMAGE_NAME=poep_sox
-
-# タグ名を定義
-MY_TAG=demo
-
-# ポート番号を定義
-HOST_PORT=4000
-DOCKER_PORT=4000
-
-# Dockerイメージをビルドするためのターゲット
+# dockerイメージを作成
 build:
-	docker build -t $(IMAGE_NAME):$(MY_TAG) .
+	docker build --target development -t poep:dev .
 
-# コンテナを起動するためのターゲット
+# dockerコンテナを作成
 run:
-	docker run -d -p $(HOST_PORT):$(DOCKER_PORT) $(IMAGE_NAME):$(MY_TAG)
+	docker run -dp 4000:3000 poep:dev
 
-# コンテナをkillするためのターゲット
-kill:
-	@docker ps -q | xargs -r docker kill
-
-
-# イメージのビルドとコンテナの起動を行うターゲット
-all: build run
+# Phony targets
+.PHONY: default build run
