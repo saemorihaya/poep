@@ -1,12 +1,67 @@
-FROM node:lts
+# 開発環境用のイメージビルド
+
+## Ubuntuをベースイメージとして、開発環境を作成
+FROM ubuntu:22.04 AS development
+
+## ワーキングディレクトリの設定
 WORKDIR /app
-COPY package.json ./
-COPY svelte.config.js ./
-COPY tsconfig.json ./
-COPY vite.config.ts ./
+
+## 必要なパッケージのインストール
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_21.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get install -y git
+
+## 以前の依存関係のクリーンアップ
+RUN rm -rf /app/node_modules /app/package-lock.json
+
+## アプリケーションの依存関係をインストール
+COPY package.json /app/
 RUN npm install
-COPY . .
-RUN npm run build
+
+## その他のプロジェクトファイルをコピー
+COPY . /app
+
+## ポート4000を公開
 EXPOSE 4000
-CMD ["npm", "run", "preview"]
-# CMD ["npm", "run", "dev"]
+
+# remoteから操作するユーザ設定
+RUN adduser --disabled-password --gecos '' vscode
+RUN chown -R vscode:vscode /app
+USER vscode
+
+## コンテナ起動時にnpmアプリを起動
+CMD npm run dev
+
+
+# 本番環境用のイメージビルド
+
+## Ubuntuをベースイメージとして、本番環境を作成
+FROM ubuntu:22.04 AS production
+
+## ワーキングディレクトリの設定
+WORKDIR /app
+
+## 必要なパッケージのインストール
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_21.x | bash - && \
+    apt-get install -y nodejs
+
+## 以前の依存関係のクリーンアップ
+RUN rm -rf /app/node_modules /app/package-lock.json
+
+## アプリケーションの依存関係をインストール
+COPY package.json /app/
+RUN npm install --only=production
+
+## その他のプロジェクトファイルをコピー
+COPY . /app
+
+## ポート3000を公開
+EXPOSE 3000
+
+## コンテナ起動時にnpmアプリを起動
+RUN npm run build
+CMD node start

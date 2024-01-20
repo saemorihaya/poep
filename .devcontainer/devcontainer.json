@@ -1,0 +1,13 @@
+{
+  "name": "poep",
+  "dockerFile": "../Dockerfile",
+  "build": {
+    "target": "development"
+  },
+  "forwardPorts": [
+    4000
+  ],
+  "extensions": [
+    "svelte.svelte-vscode"
+  ]
+}
