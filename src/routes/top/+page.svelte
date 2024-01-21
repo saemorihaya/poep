@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ImageTextComponent from "../../compornents/ImageTextComponent.svelte"; // 正しいパスに置き換えてください
+  import ImageTextComponent from "../../lib/component/ImageTextComponent.svelte"; // 正しいパスに置き換えてください
 
   // 表示する画像とテキスト
   let imageUrl = "demo_photos/oshinoko.jpeg"; // 画像のURLを適切に設定してください

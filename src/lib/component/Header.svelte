@@ -1,23 +1,37 @@
 <script>
-    import { page } from '$app/stores';
+    import { page } from "$app/stores";
 </script>
 
 <header>
-    <div class=“header-content”>
+    <div class="“header-content”">
         <nav>
             <ul>
-                <li aria-current={$page.url.pathname === '/' ? 'page' : undefined} >
-                    <a href='/'>Home</a>
+                <li
+                    aria-current={$page.url.pathname === "/"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/">Home</a>
                 </li>
-				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined} >
-                    <a href='/'>About</a>
+                <li
+                    aria-current={$page.url.pathname === "/about"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/">About</a>
                 </li>
-				<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined} >
-                    <a href='/'>Sverdle</a>
+                <li
+                    aria-current={$page.url.pathname.startsWith("/top")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/top">Top</a>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
+
 <style>
     header {
         display: flex;
@@ -47,7 +61,7 @@
         position: relative;
         height: 100%;
     }
-    li[aria-current=“page”]::before {
+    li[aria-current="“page”"]::before {
         --size: 6px;
         content: “”;
         width: 0;
@@ -70,9 +84,9 @@
         letter-spacing: 0.1em;
         text-decoration: none;
         transition: color 0.2s linear;
-		color: rgb(225, 225, 225);
+        color: rgb(225, 225, 225);
     }
     a:hover {
-		color: rgba(225, 225, 225, 0.5);
+        color: rgba(225, 225, 225, 0.5);
     }
 </style>
