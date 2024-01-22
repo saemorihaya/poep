@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    build:
+        context: ./..
+        target: development
+    ports:
+      - "3000:4000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: poep123
+      MYSQL_DATABASE: poep_database
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

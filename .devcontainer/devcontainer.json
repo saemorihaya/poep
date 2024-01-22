@@ -1,6 +1,8 @@
 {
   "name": "poep",
-  "dockerFile": "../Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
   "build": {
     "target": "development"
   },
@@ -9,5 +11,6 @@
   ],
   "extensions": [
     "svelte.svelte-vscode"
-  ]
+  ],
+  "shutdownAction": "stopCompose"
 }
