@@ -3,7 +3,7 @@
 </script>
 
 <header>
-    <div class=“header-content”>
+    <div class="“header-content”">
         <nav>
             <ul>
                 <li
@@ -61,7 +61,7 @@
         position: relative;
         height: 100%;
     }
-    li[aria-current=“page”]::before {
+    li[aria-current="“page”"]::before {
         --size: 6px;
         content: “”;
         width: 0;
@@ -84,7 +84,7 @@
         letter-spacing: 0.1em;
         text-decoration: none;
         transition: color 0.2s linear;
-        color: rgb(225, 225, 225);
+        color: var(--color-text);
     }
     a:hover {
         color: rgba(225, 225, 225, 0.5);
