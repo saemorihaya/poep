@@ -12,7 +12,9 @@
 <style>
     .image-container {
         position: relative;
-        display: inline-block;
+        display: block; /* コンテナをブロックレベル要素に変更 */
+        width: 100%; /* コンテナの幅を画面幅いっぱいにする */
+        margin: 0 auto; /* 水平方向の余白を自動調整 */
     }
     .text-overlay {
         position: absolute;

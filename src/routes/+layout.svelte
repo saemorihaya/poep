@@ -21,14 +21,14 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 900vh;
+		min-height: 00vh;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+
 		width: 100%;
 		max-width: 100rem;
 		margin: 0 auto;

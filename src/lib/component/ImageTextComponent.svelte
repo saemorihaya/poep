@@ -21,13 +21,19 @@
 
         width: auto; /* 幅を自動に設定 */
         max-width: 100%; /* 最大幅を80%に設定 */
+
         box-sizing: border-box; /* パディングとボーダーを幅と高さに含める */
+        width: 100%;
+
+        height: 350px; /* 希望の高さを設定 */
+        object-fit: cover;
+        object-position: center;
     }
 
     img {
-        width: 400px; /* 画像の幅を固定 */
-        height: 230px; /* 画像の高さを固定 */
-        border-radius: 20px; /* 画像の角を丸くする */
+        width: 300px; /* 画像の幅を固定 */
+        height: 210px; /* 画像の高さを固定 */
+        border-radius: 30px; /* 画像の角を丸くする */
     }
 
     .text {
