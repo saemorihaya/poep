@@ -4,8 +4,10 @@
 </script>
 
 <div class="container">
-    <img src={imageUrl} alt="Descriptive text" />
-    <p class="text">{text}</p>
+    <a href={`/article/${text}`}>
+        <img src={imageUrl} alt="Descriptive text" />
+        <p class="text">{text}</p>
+    </a>
 </div>
 
 <style>
