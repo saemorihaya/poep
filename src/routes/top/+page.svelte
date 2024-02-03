@@ -7,7 +7,7 @@
 </script>
 
 <main>
-  <h1>画像テキストコンポーネントのデモ</h1>
+  <h1>画像テキストコンポーネントのデモcwqdc</h1>
   <ImageTextComponent {imageUrl} {text} />
 </main>
 
