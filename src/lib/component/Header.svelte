@@ -4,6 +4,7 @@
 
 <header>
     <div class="header-content">
+        <a href="/" class="top-button">POEP</a>
         <nav>
             <ul>
                 <li
@@ -33,6 +34,16 @@
 </header>
 
 <style>
+    .top-button {
+        position: absolute;
+        justify-content: center;
+        font-size: 2.5rem;
+        left: 10px;
+
+        align-items: center;
+        text-decoration: none;
+        color: var(--color-text);
+    }
     header {
         display: flex;
         justify-content: space-between;
@@ -79,7 +90,7 @@
         padding: 0 0.5rem;
         color: var(--color-text);
         font-weight: 700;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         text-decoration: none;
