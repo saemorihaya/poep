@@ -16,6 +16,8 @@ services:
       MYSQL_DATABASE: poep_database
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - "127.0.1:3306:3306"
 
 volumes:
   db_data:
