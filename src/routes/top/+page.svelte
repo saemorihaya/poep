@@ -1,7 +1,9 @@
 <script lang="ts">
   import ImageTextComponent from "../../lib/component/ImageTextComponent.svelte"; // 正しいパスに置き換えてください
+  import ImageWithText from "../../lib/component/ImageWithText.svelte";
 
   // 表示する画像とテキスト
+  // DBからデータを受け取る
   let imageDataList = [
     {
       imageUrl: "demo_photos/oshinoko.jpeg",
@@ -16,6 +18,9 @@
 
 <main>
   <h1>画像テキストコンポーネントのデモ</h1>
+
+  <ImageWithText imageUrl="demo_photos/tanuki.jpeg" text="ここにテキスト" />
+
   <div class="scroll-container">
     {#each imageDataList as imageData}
       <ImageTextComponent imageUrl={imageData.imageUrl} text={imageData.text} />

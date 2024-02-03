@@ -9,6 +9,7 @@
 </div>
 
 <style>
+    /* スマホ、PCごとにサイズが変わらない */
     .container {
         display: flex;
 
@@ -24,8 +25,8 @@
     }
 
     img {
-        width: 200px; /* 画像の幅を固定 */
-        height: 130px; /* 画像の高さを固定 */
+        width: 400px; /* 画像の幅を固定 */
+        height: 230px; /* 画像の高さを固定 */
         border-radius: 20px; /* 画像の角を丸くする */
     }
 
