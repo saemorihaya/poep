@@ -1,6 +1,20 @@
 <script>
-    let isOpen = false; // メニューが開いているかどうかの状態
     import { page } from "$app/stores";
+    import { clickOutside } from "./actions/clickOutside"; // 正しいパスを指定してください
+    import { onMount, onDestroy } from "svelte";
+
+    let isOpen = false; // メニューが開いているかどうかの状態
+    function closeMenu() {
+        isOpen = false;
+    }
+    onMount(() => {
+        const unsubscribe = page.subscribe(() => {
+            closeMenu();
+        });
+
+        // コンポーネントが破棄されたときに購読を解除
+        onDestroy(unsubscribe);
+    });
 </script>
 
 <header>
@@ -46,7 +60,7 @@
     </div>
 </header>
 {#if isOpen}
-    <nav class="menu_sp">
+    <nav class="menu_sp" use:clickOutside={closeMenu} class:active={isOpen}>
         <ul>
             <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
                 <a href="/">Home</a>
