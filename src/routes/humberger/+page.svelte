@@ -61,6 +61,7 @@
     align-items: flex-start; /* コンテンツを左に揃えます */
     color: white;
     padding-top: 20px; /* メニューの上部に少し余白を追加します */
+    z-index: 1000;
   }
 
   .menu ul {
@@ -96,24 +97,6 @@
       align-items: flex-start; /* コンテンツを左に揃えます */
       color: white;
       padding-top: 20px; /* メニューの上部に少し余白を追加します */
-    }
-
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      width: auto; /* ulの幅を自動に設定し、中身のリストアイテムに合わせます */
-    }
-
-    .menu li {
-      margin: 0.5rem 0; /* リストアイテムの間隔を調整します */
-      padding-left: 1rem; /* リストアイテムの左に余白を追加します */
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      display: block; /* リンクがブロックレベル要素になり、よりタップしやすくなります */
     }
   }
 </style>
