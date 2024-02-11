@@ -1,39 +1,59 @@
 <script>
+    let isOpen = false; // メニューが開いているかどうかの状態
     import { page } from "$app/stores";
 </script>
 
 <header>
     <div class="header-content">
         <a href="/" class="top-button">POEP</a>
-        <nav>
-            <ul>
-                <li
-                    aria-current={$page.url.pathname === "/"
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/">Home</a>
-                </li>
-                <li
-                    aria-current={$page.url.pathname === "/about"
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/">About</a>
-                </li>
-                <li
-                    aria-current={$page.url.pathname.startsWith("/top")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/top">Top</a>
-                </li>
-            </ul>
-        </nav>
+        {#if isOpen}
+            <nav>
+                <ul>
+                    <li
+                        aria-current={$page.url.pathname === "/"
+                            ? "page"
+                            : undefined}
+                    >
+                        <a href="/">Home</a>
+                    </li>
+                    <li
+                        aria-current={$page.url.pathname === "/about"
+                            ? "page"
+                            : undefined}
+                    >
+                        <a href="/about">About</a>
+                    </li>
+                    <li
+                        aria-current={$page.url.pathname.startsWith("/top")
+                            ? "page"
+                            : undefined}
+                    >
+                        <a href="/top">Top</a>
+                    </li>
+                </ul>
+            </nav>
+        {/if}
+    </div>
+    <div class="burger" on:click={() => (isOpen = !isOpen)}>
+        <div class={isOpen ? "bar change bar1" : "bar bar1"}></div>
+        <div class={isOpen ? "bar change bar2" : "bar bar2"}></div>
+        <div class={isOpen ? "bar change bar3" : "bar bar3"}></div>
     </div>
 </header>
 
 <style>
+    .burger {
+        cursor: pointer;
+        display: white;
+        width: 30px;
+        height: 20px;
+    }
+    .bar {
+        height: 3px;
+        background: white;
+        margin: 8px 0;
+        transition: 0.4s;
+    }
     .top-button {
         position: absolute;
         justify-content: center;
