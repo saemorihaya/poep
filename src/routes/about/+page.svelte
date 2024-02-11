@@ -1,6 +1,7 @@
 <script lang="ts">
   let isOpen = false; // メニューが開いているかどうかの状態
   import { page } from "$app/stores";
+  import IconButton from "@smui/icon-button";
 </script>
 
 <div class="burger" on:click={() => (isOpen = !isOpen)}>

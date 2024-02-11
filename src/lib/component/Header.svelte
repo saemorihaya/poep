@@ -6,33 +6,40 @@
 <header>
     <div class="header-content">
         <a href="/" class="top-button">POEP</a>
-        {#if isOpen}
-            <nav>
-                <ul>
-                    <li
-                        aria-current={$page.url.pathname === "/"
-                            ? "page"
-                            : undefined}
-                    >
-                        <a href="/">Home</a>
-                    </li>
-                    <li
-                        aria-current={$page.url.pathname === "/about"
-                            ? "page"
-                            : undefined}
-                    >
-                        <a href="/about">About</a>
-                    </li>
-                    <li
-                        aria-current={$page.url.pathname.startsWith("/top")
-                            ? "page"
-                            : undefined}
-                    >
-                        <a href="/top">Top</a>
-                    </li>
-                </ul>
-            </nav>
-        {/if}
+        <!-- {#if isOpen} -->
+        <nav>
+            <ul>
+                <li
+                    aria-current={$page.url.pathname === "/"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/">Home</a>
+                </li>
+                <li
+                    aria-current={$page.url.pathname === "/about"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/about">About</a>
+                </li>
+                <li
+                    aria-current={$page.url.pathname === "/humberger"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/humberger">humberger</a>
+                </li>
+                <li
+                    aria-current={$page.url.pathname.startsWith("/top")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/top">Top</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- {/if} -->
     </div>
     <div class="burger" on:click={() => (isOpen = !isOpen)}>
         <div class={isOpen ? "bar change bar1" : "bar bar1"}></div>
@@ -71,6 +78,7 @@
         background-color: black;
         color: var(--color-theme-1);
         background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+        min-height: 50px;
     }
     nav {
         display: flex;
@@ -119,5 +127,11 @@
     }
     a:hover {
         color: rgba(225, 225, 225, 0.5);
+    }
+
+    @media (min-width: 769px) {
+        .burger {
+            display: none;
+        }
     }
 </style>
