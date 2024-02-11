@@ -89,12 +89,16 @@
     }
     header {
         display: flex;
-        justify-content: space-between;
         justify-content: center;
         background-color: black;
         color: var(--color-theme-1);
         background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
         min-height: 50px;
+        width: 100%; /* フル幅にします */
+        position: fixed; /* ヘッダーを固定位置にします */
+        top: 0; /* 画面の最上部から始めます */
+        left: 0; /* 画面の最左部から始めます */
+        z-index: 200; /* 他の要素より前面に表示します */
     }
     .menu_pc {
         display: flex;
@@ -151,7 +155,6 @@
         }
         header {
             display: flex;
-            justify-content: space-between;
             justify-content: right;
             background-color: var(--background);
             color: var(--color-theme-1);
@@ -163,6 +166,7 @@
             display: white;
             width: 30px;
             height: 20px;
+            padding-right: 20px;
         }
         .bar {
             height: 3px;
@@ -172,16 +176,16 @@
         }
         .menu_sp {
             position: fixed;
-            top: 50px;
+            top: 0px;
             width: 100%; /* メニューの幅を画面全体にします */
             background-color: black;
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* コンテンツを上部に揃えます */
             align-items: flex-start; /* コンテンツを左に揃えます */
             color: white;
-
-            z-index: 1000;
+            z-index: 100;
         }
         .menu_sp ul {
             list-style: none;
@@ -197,7 +201,7 @@
         .menu_sp a {
             color: white;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             display: block; /* リンクがブロックレベル要素になり、よりタップしやすくなります */
         }
     }

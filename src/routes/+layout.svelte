@@ -28,10 +28,10 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-
 		width: 100%;
 		max-width: 100rem;
 		margin: 0 auto;
+		margin-top: 2rem; /* 上に隙間を作ります */
 		box-sizing: border-box;
 	}
 
