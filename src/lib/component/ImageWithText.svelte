@@ -25,9 +25,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white; /* テキストの色 */
+        color: var(--color-text); /* テキストの色 */
         font-size: 20px; /* テキストのサイズ */
-        background-color: rgba(0, 0, 0, 0.5); /* 背景の透明度を調整 */
     }
     img {
         display: block; /* 余白をなくす */

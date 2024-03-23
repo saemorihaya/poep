@@ -95,8 +95,7 @@
         position: absolute;
         justify-content: center;
         font-size: 2.5rem;
-        left: 10px;
-
+        left: 1rem;
         align-items: center;
         text-decoration: none;
         color: var(--color-text);
