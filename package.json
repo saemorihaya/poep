@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-material-ui": "^7.0.0-beta.16"
+		"dotenv": "^16.4.1",
+		"mysql2": "^3.9.1"
 	}
 }

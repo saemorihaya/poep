@@ -6,6 +6,9 @@
   "build": {
     "target": "development"
   },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
   "forwardPorts": [
     4000
   ],

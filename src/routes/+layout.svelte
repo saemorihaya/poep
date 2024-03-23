@@ -1,6 +1,12 @@
-<script>
-	import Header from "../lib/component/Header.svelte";
-	import "./styles.css";
+<script lang="ts">
+    import { UserInfo } from '$lib/model/userInfo';
+	import Header from '../lib/component/Header.svelte';
+	import './styles.css';
+
+	export let data;
+	const userInfos: UserInfo[] = JSON.parse(data.post.userInfos).map( (jsonObj: any) =>
+		new UserInfo(jsonObj.id, jsonObj.name, jsonObj.password)
+	);
 </script>
 
 <div class="app">
@@ -11,9 +17,9 @@
 	</main>
 
 	<footer>
-		<p>
-			visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit
-		</p>
+		{#each userInfos as user}
+			<p>id: {user.id}, name: {user.name}, password: {user.password}</p>
+		{/each}
 	</footer>
 </div>
 
@@ -41,10 +47,6 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
 	}
 
 	@media (min-width: 480px) {
