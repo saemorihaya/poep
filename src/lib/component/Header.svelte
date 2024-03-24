@@ -7,14 +7,6 @@
     function closeMenu() {
         isOpen = false;
     }
-    onMount(() => {
-        const unsubscribe = page.subscribe(() => {
-            closeMenu();
-        });
-
-        // コンポーネントが破棄されたときに購読を解除
-        onDestroy(unsubscribe);
-    });
 </script>
 
 <header>
