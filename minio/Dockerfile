@@ -1,6 +1,9 @@
 # Ubuntuベースで起動する
 FROM ubuntu:22.04
 
+## ワーキングディレクトリの設定
+WORKDIR /app/minio
+
 # wgetをインストール
 RUN apt-get update -q && apt-get install -yq wget \
     && rm -rf /var/lib/apt/lists/*
