@@ -15,17 +15,17 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		min-height: 00vh;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
+		max-width: 100rem;
 		margin: 0 auto;
+		margin-top: 2rem; /* 上に隙間を作ります */
 		box-sizing: border-box;
 	}
 </style>

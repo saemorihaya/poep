@@ -1,30 +1,43 @@
 <script lang="ts">
-    export let imageUrl: string; // imageUrlの型をstringとして明示
-    export let text: string;     // textの型もstringとして明示
+    export let imageUrl: string;
+    export let text: string;
+    export let gap: string = "20px"; // デフォルト値を設定
+    export let padding: string = "20px";
+    export let maxWidth: string = "100%";
 </script>
 
-<div class="container">
-    <img src={imageUrl} alt="Descriptive text" />
-    <p class="text">{text}</p>
+<div
+    class="container"
+    style={`gap: ${gap}; padding: ${padding}; max-width: ${maxWidth};`}
+>
+    <a href={`/article/${text}`}>
+        <img src={imageUrl} alt="Descriptive text" />
+        <p class="text">{text}</p>
+    </a>
 </div>
 
 <style>
     .container {
         display: flex;
-        align-items: flex-start; /* アイテムを上部に揃える */
-        gap: 10px;
-        border: 2px solid #ffb6c1; /* 淡いピンク色のボーダー */
-        padding: 10px;
-        border-radius: 10px; /* 角の丸みを追加 */
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-sizing: border-box;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: center;
     }
 
     img {
-        max-width: 200px; /* 画像の最大幅 */
-        height: auto; /* アスペクト比を維持 */
+        width: 300px;
+        height: 210px;
+        border-radius: 30px;
     }
 
     .text {
-        font-size: 1rem;
-        color: #333;
+        font-size: 0.8rem;
+        color: var(--color-text);
+        text-align: center;
     }
 </style>
