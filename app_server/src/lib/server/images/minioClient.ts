@@ -1,5 +1,6 @@
 import { Client, type BucketItem } from "minio";
 
+
 // 環境変数を読み込む
 const endPoint = import.meta.env.VITE_SERVER_HOST;
 const port = Number(import.meta.env.VITE_SERVER_PORT);
@@ -11,10 +12,10 @@ const minioClient = new Client({
     useSSL: false,
     accessKey: 'PnxRnC1T840izDABswww',
     secretKey: 'k2NRl4FuTpzebR95AKlKlLst8BQ03SqYX2tFTlMU'
-  });
+});
 
-  // 指定されたバケットから画像のURLリストを取得する関数
-  export async function getImageUrls(bucketName: string): Promise<Array<String>> {   
+// 指定されたバケットから画像のURLリストを取得する関数
+export async function getImageUrls(bucketName: string): Promise<Array<String>> {
     return new Promise((resolve, reject) => {
         const bucketItems: Array<BucketItem> = [];
         const images: Array<String> = [];

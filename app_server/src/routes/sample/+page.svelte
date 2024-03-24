@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { UserInfo } from '$lib/model/userInfo';
-    import Button from '@smui/button/src/Button.svelte';
-    import { Image, ImageAspectContainer, Item } from '@smui/image-list';
-    import ImageList from '@smui/image-list/src/ImageList.svelte';
+    import { UserInfo } from "$lib/model/userInfo";
+    import Button from "@smui/button/src/Button.svelte";
+    import ImageTextComponent from "../../lib/component/ImageTextComponent.svelte"; // 正しいパスに置き換えてください
+    import ImageWithText from "../../lib/component/ImageWithText.svelte";
 
     // 設定値
     const host = "http://localhost";
@@ -14,21 +14,22 @@
 
     // サーバーからデータ取得
     export let data;
-    const userInfos: UserInfo[] = JSON.parse(data.post.userInfos).map( (jsonObj: any) =>
-		new UserInfo(jsonObj.id, jsonObj.name, jsonObj.password)
-	);
-    const angels = data.post.images.map( (image) => {
+    const userInfos: UserInfo[] = JSON.parse(data.post.userInfos).map(
+        (jsonObj: any) =>
+            new UserInfo(jsonObj.id, jsonObj.name, jsonObj.password),
+    );
+    const angels = data.post.images.map((image) => {
         return `${host}:${port}${image}`;
-    })
+    });
 
     function handleNormalButton() {
         isNormalOpen = true;
-        alert('Normal Button Was Clicked!');
+        alert("Normal Button Was Clicked!");
     }
 
     function handleGradientButton() {
         isGradientOpen = true;
-        alert('Gradient Button Was Clicked!');
+        alert("Gradient Button Was Clicked!");
     }
 </script>
 
@@ -40,7 +41,7 @@
         グラデーションボタン
     </Button>
 
-    <div class="image-scroll-container">
+    <!-- <div class="image-scroll-container">
         <ImageList>
             {#each angels as angel}
                 <Item>
@@ -50,12 +51,18 @@
                 </Item>
             {/each}
         </ImageList>
+    </div> -->
+    <pre>{JSON.stringify(angels, null, 2)}</pre>
+    <div class="scroll-container">
+        {#each angels as angel}
+            <ImageTextComponent imageUrl={angel} text={"a"} />
+        {/each}
     </div>
 
     <footer>
         {#each userInfos as user}
-			<p>id: {user.id}, name: {user.name}, password: {user.password}</p>
-		{/each}
+            <p>id: {user.id}, name: {user.name}, password: {user.password}</p>
+        {/each}
     </footer>
 </div>
 

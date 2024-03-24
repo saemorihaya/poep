@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # MinIOクライアント（mc）の設定
-mc alias set minio http://localhost:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD}
+mc alias set minio http://localhost:9000 ${VITE_MINIO_ROOT_USER} ${VITE_MINIO_ROOT_PASSWORD}
 
 # バケットの作成（すでに存在しない場合）
 mc mb minio/angels --ignore-existing

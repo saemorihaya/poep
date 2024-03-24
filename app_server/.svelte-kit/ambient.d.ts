@@ -26,6 +26,16 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const VITE_SERVER_HOST: string;
+	export const VITE_SERVER_PORT: string;
+	export const VITE_CLIENT_HOST: string;
+	export const VITE_DB_PORT: string;
+	export const VITE_DB_USER: string;
+	export const VITE_DB_PASS: string;
+	export const VITE_DB_NAME: string;
+	export const VITE_MINIO_ROOT_USER: string;
+	export const VITE_MINIO_ROOT_PASSWORD: string;
+	export const VITE_MINIO_PORT: string;
 	export const LESSOPEN: string;
 	export const npm_config_user_agent: string;
 	export const HOSTNAME: string;
@@ -111,6 +121,16 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		VITE_SERVER_HOST: string;
+		VITE_SERVER_PORT: string;
+		VITE_CLIENT_HOST: string;
+		VITE_DB_PORT: string;
+		VITE_DB_USER: string;
+		VITE_DB_PASS: string;
+		VITE_DB_NAME: string;
+		VITE_MINIO_ROOT_USER: string;
+		VITE_MINIO_ROOT_PASSWORD: string;
+		VITE_MINIO_PORT: string;
 		LESSOPEN: string;
 		npm_config_user_agent: string;
 		HOSTNAME: string;
