@@ -7,7 +7,8 @@ services:
     ports:
       - "3000:4000"
     depends_on:
-      - db  
+      - db
+      - minio
 
   db:
     image: mysql:8.0
@@ -20,5 +21,15 @@ services:
     ports:
       - "127.0.0.1:33161:3306"
 
+  minio:
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    build:
+        context:  ./../minio
+    volumes:
+      - minio_data:/data
+
 volumes:
   db_data:
+  minio_data:

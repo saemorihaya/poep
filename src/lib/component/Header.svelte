@@ -42,6 +42,13 @@
                 >
                     <a href="/top">Top</a>
                 </li>
+                <li
+                    aria-current={$page.url.pathname === "/sample"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/sample">サンプル</a>
+                </li>
             </ul>
         </nav>
     </div>

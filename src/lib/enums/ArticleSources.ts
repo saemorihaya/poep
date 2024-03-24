@@ -1,0 +1,3 @@
+enum ArticleSources {
+    ORICON = "オリコン",
+}
