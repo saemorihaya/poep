@@ -12,6 +12,8 @@
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--button-gradient-background: linear-gradient(to bottom right, rgba(255, 255, 0, 1), rgba(255, 0, 0, 1), rgba(0, 0, 255, 1), rgba(0, 128, 0, 1));
+	--button-gradient-background-hovered: linear-gradient(to bottom right, rgba(255, 255, 0, 0.7), rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7), rgba(0, 128, 0, 0.7));
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
