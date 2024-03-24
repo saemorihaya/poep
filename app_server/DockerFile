@@ -4,7 +4,7 @@
 FROM ubuntu:22.04 AS development
 
 ## ワーキングディレクトリの設定
-WORKDIR /app
+WORKDIR /app/app_server
 
 ## 必要なパッケージのインストール
 RUN apt-get update && \
@@ -17,7 +17,7 @@ RUN apt-get update && \
 RUN rm -rf /app/node_modules /app/package-lock.json
 
 ## アプリケーションの依存関係をインストール
-COPY package.json /app/
+COPY package.json /app/app_server/
 RUN npm install
 
 ## ポート4000を公開
@@ -38,7 +38,7 @@ CMD npm run dev
 FROM ubuntu:22.04 AS production
 
 ## ワーキングディレクトリの設定
-WORKDIR /app
+WORKDIR /app/app_server
 
 ## 必要なパッケージのインストール
 RUN apt-get update && \
@@ -50,7 +50,7 @@ RUN apt-get update && \
 RUN rm -rf /app/node_modules /app/package-lock.json
 
 ## アプリケーションの依存関係をインストール
-COPY package.json /app/
+COPY package.json /app/app_server/
 RUN npm install --only=production
 
 ## その他のプロジェクトファイルをコピー

@@ -1,0 +1,20 @@
+{
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/about": [
+		"src/routes/about/+page.ts"
+	],
+	"/article/[text]": [
+		"src/routes/article/[text]/+page.ts"
+	],
+	"/humberger": [
+		"src/routes/humberger/+page.ts"
+	],
+	"/sample": [
+		"src/routes/sample/+page.server.ts"
+	],
+	"/top": [
+		"src/routes/top/+page.ts"
+	]
+}
